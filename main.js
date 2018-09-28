@@ -26,11 +26,14 @@ var server = http.createServer(app);
 
 // 라우트를 수행합니다.
 app.get('/', function (request, response, next) {
+    response.redirect('/lab');
+}
+app.get('/lab', function (request, response, next) {
     fs.readFile('sample.html', function (error, data) {
         response.send(data.toString("utf-8"));
     });
 });
-app.get('/seats', function (request, response, next) {
+app.get('/lab/seats', function (request, response, next) {
     response.send(seats);
 });
 
