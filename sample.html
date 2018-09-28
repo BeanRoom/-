@@ -89,7 +89,7 @@
                 }
             };
             // Ajax를 수행합니다.
-            $.getJSON('/seats', { dummy: new Date().getTime() }, function (data) {
+            $.getJSON('/lab/seats', { dummy: new Date().getTime() }, function (data) {
                 // 좌석을 생성합니다.
                 $.each(data, function (indexY, line) {
                     // 문서 객체를 생성합니다.
