@@ -42,7 +42,9 @@ db.once('open', function(){
     console.log("Connnected to mongod server");
 });
 
-var router = require('./router/index')(app,passport);
+// 라우팅 설정
+var index = require('./router/index');
+app.use('/', index);
 
 // 변수를 선언합니다.
 var seats = [
@@ -60,19 +62,19 @@ var seats = [
     [1, 1, 0, 1, 1, 0, 1, 1, 0, 1,],
 ];
 
-// 라우트를 수행합니다.
-app.get('/', function (request, response, next) {
-    response.redirect('/lab');
-});
+// // 라우트를 수행합니다.
+// app.get('/', function (request, response, next) {
+//     response.redirect('/lab');
+// });
 
-app.get('/lab', function (request, response, next) {
-    fs.readFile('sample.html', function (error, data) {
-        response.send(data.toString("utf-8"));
-    });
-});
-app.get('/lab/seats', function (request, response, next) {
-    response.send(seats);
-});
+// app.get('/lab', function (request, response, next) {
+//     fs.readFile('sample.html', function (error, data) {
+//         response.send(data.toString("utf-8"));
+//     });
+// });
+// app.get('/lab/seats', function (request, response, next) {
+//     response.send(seats);
+// });
 
 var server = app.listen(3000, function(){
     console.log("Express server has started on port 3000");
