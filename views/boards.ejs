@@ -1,49 +1,59 @@
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
-<!-- jquery -->
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-
-<!-- bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-<!-- my css -->
-<link rel="stylesheet" href="/css/master.css">
-
-<title>My Website</title>
-
-
-<nav class="navbar navbar-default">
- <div class="container">
-  <div class="navbar-header">
-   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-    <span class="icon-bar"></span>
-   </button>
-   <div class="navbar-brand">My Website</div>
-  </div>
-  <div class="collapse navbar-collapse" id="myNavbar">
-   <ul class="nav navbar-nav">
-    <li><a href="/">Home</a></li>
-    <li><a href="/about">About</a></li>
-   </ul>
-  </div>
- </div>
-</nav>
-
 <!DOCTYPE html>
 <html>
  <head>
-  <%// include ../partials/head 
-  %>
- </head>
+  <% include partials/head %>
+ <title>게시판</title>
+  </head>
  <body>
-  <//include ../partials/nav %>
-  <div class="container home home-welcome">
-   <div class="jumbotron">
-    <h1>MEN - 게시판</h1>
+  <% include partials/nav %>
+  <div class="container">
+    <table class="table table-hover">
+    <thead>
+    <tr>
+        <th>번호</th>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>날짜</th>
+        <th>조회수</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>165</td>
+            <td>이제 곧 bootstrap4가..</td>
+            <td>전형탁</td>
+            <td>2016.12.02</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>164</td>
+            <td>이제 곧 bootstrap4가..</td>
+            <td>최화랑</td>
+            <td>2016.12.02</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>163</td>
+            <td>이제 곧 bootstrap4가..</td>
+            <td>박주영</td>
+            <td>2016.12.02</td>
+            <td>2</td>
+        </tr>
+    </tbody> 
+    </table>
+    
+    <hr/>
+    <a class="btn btn-default pull-right">글쓰기</a>
+
+    <div class="text-center">
+        <ui class="pagination">
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>  
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+        </ui>
+    </div>
    </div>
-  </div>
  </body>
 </html>
