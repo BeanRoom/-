@@ -9,6 +9,8 @@ var http = require('http');
 var fs = require('fs');
 var passport= require('passport');
 
+// app.use들 사이에 순서 바뀌면 오류날 수 있음
+
 // bodyParser 세팅
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -20,6 +22,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
+// passport 설정
 app.use(passport.initialize()); // passport 구동
 app.use(passport.session()); // 세션 연결
 app.use(express.static('public'));

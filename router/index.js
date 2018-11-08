@@ -3,6 +3,8 @@ var path = require('path');
 var router = express.Router();
 var passport = require('passport');
 
+// 메인화면
+// 로그인 되어 있지 않다면 로그인 창으로 넘어감
 router.get('/', function (req, res, next) {
     // 로그인 체크
     if(req.isAuthenticated()){
@@ -12,9 +14,11 @@ router.get('/', function (req, res, next) {
     }
 });
 
+// 회원가입 화면
 router.get('/signup', function(req,res){
     res.render('signup');
 });
+
 
 router.post('/signup', passport.authenticate('signup', {
     successRedirect : '/', 

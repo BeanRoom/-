@@ -1,3 +1,4 @@
+// 외출 스키마
 var mongoose = require('mongoose');
 
 var outingSchema = mongoose.Schema({

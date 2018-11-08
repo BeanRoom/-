@@ -1,3 +1,4 @@
+// 벌점 스키마
 var mongoose = require('mongoose');
 
 var redPointSchema = mongoose.Schema({
