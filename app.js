@@ -49,6 +49,10 @@ db.once('open', function(){
 var index = require('./router/index');
 app.use('/', index);
 
+// /boards/ 로 들어오는 요청 contents.js에서 처리
+var boards = require('./router/contents');
+app.use('/boards', boards);
+
 // 변수를 선언합니다.
 var seats = [
     [1, 1, 0, 1, 1, 0, 1, 1, 0, 1,],
